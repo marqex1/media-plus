@@ -4,276 +4,264 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>ميديا بلس | Media Plus - وكالة دعاية وإعلان وتصميم جرافيك ومطبوعات</title>
-    <meta name="description" content="ميديا بلس هي شريكك الإبداعي. نقدم خدمات تصميم الجرافيك، الهوية البصرية، وكافة أنواع المطبوعات الورقية والآوت دور بأعلى جودة في مصر والوطن العربي.">
-    <meta name="keywords" content="ميديا بلس, Media Plus, تصميم جرافيك, مطبوعات, دعاية وإعلان, لوجو, هوية بصرية, طباعة بنر, تصاميم سوشيال ميديا, ماركيكس">
+    <title>ميديا بلس | وكالة الدعاية والإعلان والحلول الإبداعية</title>
+    <meta name="description" content="ميديا بلس هي الوكالة الرائدة في تصميم الهويات البصرية، المطبوعات الرقمية، وحملات الدعاية المتكاملة. ابتكار يتجاوز الحدود.">
     <link rel="canonical" href="https://marqex1.github.io/media-plus/" />
 
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700;900&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
     <style>
         :root {
-            --main-purple: #6a49a1; /* بنفسجي اللوجو */
-            --dark-purple: #4a307a;
-            --accent-yellow: #ffcc00; 
-            --white: #ffffff;
-            --black: #1a1a1a;
-            --light-grey: #f4f4f9;
+            --primary: #7c4dff; /* بنفسجي كهربائي */
+            --secondary: #00e5ff; /* تركواز نيون */
+            --dark: #0a0a0c;
+            --glass: rgba(255, 255, 255, 0.05);
+            --gradient: linear-gradient(135deg, #7c4dff, #00e5ff);
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Cairo', sans-serif; }
+        body { background-color: var(--dark); color: #fff; scroll-behavior: smooth; overflow-x: hidden; }
 
-        body {
-            font-family: 'Cairo', sans-serif;
-            background-color: var(--white);
-            color: var(--black);
-            line-height: 1.6;
-        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #111; }
+        ::-webkit-scrollbar-thumb { background: var(--gradient); border-radius: 10px; }
 
-        /* الهيدر */
+        /* Header */
         header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 15px 0;
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             position: fixed;
             width: 100%;
-            top: 0;
-            z-index: 2000;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            z-index: 1000;
+            background: rgba(10, 10, 12, 0.8);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
 
-        .container { width: 90%; max-width: 1200px; margin: auto; }
+        .logo { font-size: 1.8rem; font-weight: 900; background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; letter-spacing: 1px; }
 
-        nav { display: flex; justify-content: space-between; align-items: center; }
+        nav ul { display: flex; list-style: none; gap: 30px; }
+        nav ul li a { color: #fff; text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: 0.3s; text-transform: uppercase; }
+        nav ul li a:hover { color: var(--secondary); }
 
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 900;
-            color: var(--main-purple);
-            text-decoration: none;
-        }
-
-        .nav-links { display: flex; list-style: none; gap: 25px; }
-        .nav-links a { text-decoration: none; color: var(--black); font-weight: 700; transition: 0.3s; }
-        .nav-links a:hover { color: var(--main-purple); }
-
-        /* قسم الهيرو (البداية) */
+        /* Hero Section */
         .hero {
             height: 100vh;
-            background: linear-gradient(135deg, var(--dark-purple), var(--main-purple));
             display: flex;
             align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: var(--white);
-            padding-top: 80px;
+            position: relative;
+            padding: 0 10%;
+            background: radial-gradient(circle at top right, rgba(124, 77, 255, 0.2), transparent),
+                        radial-gradient(circle at bottom left, rgba(0, 229, 255, 0.1), transparent);
         }
 
-        .hero-content h1 { font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 900; margin-bottom: 20px; }
-        .hero-content p { font-size: 1.3rem; margin-bottom: 30px; opacity: 0.9; }
+        .hero-text { max-width: 800px; z-index: 2; }
+        .hero-text h1 { font-size: clamp(3rem, 8vw, 5rem); line-height: 1.1; margin-bottom: 25px; font-weight: 900; }
+        .hero-text p { font-size: 1.2rem; color: #ccc; margin-bottom: 40px; border-right: 4px solid var(--secondary); padding-right: 20px; }
 
-        .cta-btn {
-            background: var(--accent-yellow);
-            color: var(--black);
-            padding: 15px 40px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 900;
-            transition: 0.4s;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-        }
-        .cta-btn:hover { transform: translateY(-5px); background: #fff; }
+        .btn-group { display: flex; gap: 20px; }
+        .btn { padding: 15px 35px; border-radius: 5px; text-decoration: none; font-weight: 700; transition: 0.4s; position: relative; overflow: hidden; }
+        .btn-primary { background: var(--gradient); color: #fff; }
+        .btn-outline { border: 2px solid var(--primary); color: #fff; }
+        .btn:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(124, 77, 255, 0.3); }
 
-        /* قسم الخدمات */
-        .section-padding { padding: 100px 0; }
-        .section-title { text-align: center; margin-bottom: 60px; }
-        .section-title h2 { font-size: 2.5rem; color: var(--dark-purple); margin-bottom: 15px; }
+        /* Services Section */
+        .services { padding: 100px 5%; position: relative; }
+        .section-tag { color: var(--secondary); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; display: block; margin-bottom: 10px; text-align: center; }
+        .section-title { text-align: center; font-size: 3rem; margin-bottom: 60px; }
 
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-        }
-
-        .service-card {
-            background: #fff;
-            padding: 40px;
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .s-card {
+            background: var(--glass);
+            padding: 50px 40px;
             border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
             transition: 0.4s;
-            border: 1px solid #eee;
+            position: relative;
         }
-        .service-card:hover { transform: translateY(-10px); border-color: var(--main-purple); }
-        .service-card i { font-size: 3rem; color: var(--main-purple); margin-bottom: 20px; }
-        .service-card h3 { font-size: 1.8rem; margin-bottom: 20px; color: var(--dark-purple); }
+        .s-card:hover { background: rgba(255,255,255,0.08); border-color: var(--secondary); transform: scale(1.03); }
+        .s-card i { font-size: 3.5rem; background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 25px; display: block; }
+        .s-card h3 { font-size: 1.8rem; margin-bottom: 15px; color: #fff; }
+        .s-card ul { list-style: none; color: #aaa; }
+        .s-card ul li { margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+        .s-card ul li::before { content: '→'; color: var(--secondary); }
 
-        .service-list { list-style: none; text-align: right; }
-        .service-list li { margin-bottom: 12px; position: relative; padding-right: 25px; }
-        .service-list li::before {
-            content: "\f058"; font-family: "Font Awesome 5 Free"; font-weight: 900;
-            position: absolute; right: 0; color: var(--accent-yellow);
-        }
+        /* Stats Counter */
+        .stats { background: var(--gradient); padding: 60px 5%; display: flex; justify-content: space-around; flex-wrap: wrap; text-align: center; border-radius: 30px; margin: 0 5% 100px; }
+        .stat-item h2 { font-size: 3rem; margin-bottom: 5px; }
+        .stat-item p { font-weight: 700; color: rgba(255,255,255,0.8); }
 
-        /* سابقة الأعمال */
-        .portfolio { background: var(--light-grey); }
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+        /* Portfolio Items */
+        .portfolio { padding-bottom: 100px; text-align: center; }
+        .p-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 10px; padding: 0 5%; }
+        .p-item { height: 350px; background: #1a1a1a; border-radius: 15px; position: relative; overflow: hidden; cursor: pointer; }
+        .p-overlay { 
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
+            background: linear-gradient(to top, var(--dark), transparent);
+            display: flex; flex-direction: column; justify-content: flex-end; padding: 30px;
+            opacity: 0; transition: 0.5s;
         }
-        .portfolio-item {
-            height: 250px;
-            background: var(--main-purple);
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            font-weight: bold;
-            transition: 0.3s;
-            cursor: pointer;
-            border: 3px solid #fff;
-        }
-        .portfolio-item:hover { background: var(--dark-purple); transform: scale(1.02); }
+        .p-item:hover .p-overlay { opacity: 1; }
 
-        /* زر الواتساب العائم */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: #25d366;
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            text-align: center;
-            font-size: 30px;
-            box-shadow: 2px 2px 15px rgba(0,0,0,0.3);
-            z-index: 3000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
+        /* WhatsApp & Contact */
+        .whatsapp-fixed { 
+            position: fixed; bottom: 30px; right: 30px; 
+            width: 65px; height: 65px; background: #25d366; 
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-size: 35px; color: #fff; text-decoration: none; z-index: 999;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+            animation: pulse 2s infinite;
         }
 
-        /* الفوتر */
-        footer { background: var(--black); color: #fff; padding: 60px 0 20px; text-align: center; }
-        .footer-links a { color: #fff; margin: 0 15px; font-size: 1.5rem; transition: 0.3s; }
-        .footer-links a:hover { color: var(--main-purple); }
-        
-        .copyright { margin-top: 40px; padding-top: 20px; border-top: 1px solid #333; color: #888; }
-        .marqex-btn { color: var(--main-purple); text-decoration: none; font-weight: bold; border-bottom: 1px dashed; }
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
 
-        @media (max-width: 768px) { .nav-links { display: none; } }
+        /* Footer */
+        footer { padding: 80px 5% 30px; background: #050507; border-top: 1px solid rgba(255,255,255,0.05); }
+        .footer-content { display: flex; justify-content: space-between; flex-wrap: wrap; margin-bottom: 50px; }
+        .footer-col { flex: 1; min-width: 250px; margin-bottom: 30px; }
+        .footer-col h4 { margin-bottom: 20px; color: var(--secondary); }
+
+        .copyright { text-align: center; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.05); font-size: 0.9rem; color: #555; }
+        .marqex-link { color: var(--primary); text-decoration: none; font-weight: 700; border: 1px solid var(--primary); padding: 5px 15px; border-radius: 20px; transition: 0.3s; }
+        .marqex-link:hover { background: var(--primary); color: #fff; }
+
+        @media (max-width: 768px) {
+            nav ul { display: none; }
+            .hero-text h1 { font-size: 3rem; }
+        }
     </style>
 </head>
 <body>
 
-    <a href="https://wa.me/20123456789" class="whatsapp-float animate__animated animate__bounceInUp" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+    <a href="https://wa.me/20123456789" class="whatsapp-fixed" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
     <header>
-        <div class="container">
-            <nav>
-                <a href="#" class="logo">MEDIA <span>PLUS</span></a>
-                <ul class="nav-links">
-                    <li><a href="#home">الرئيسية</a></li>
-                    <li><a href="#services">خدماتنا</a></li>
-                    <li><a href="#portfolio">أعمالنا</a></li>
-                    <li><a href="#contact">تواصل معنا</a></li>
-                </ul>
-            </nav>
-        </div>
+        <a href="#" class="logo">MEDIA PLUS.</a>
+        <nav>
+            <ul>
+                <li><a href="#home">الرئيسية</a></li>
+                <li><a href="#services">الخدمات</a></li>
+                <li><a href="#portfolio">الأعمال</a></li>
+                <li><a href="#contact">تواصل معنا</a></li>
+            </ul>
+        </nav>
+        <a href="#contact" class="btn btn-primary" style="padding: 10px 25px; font-size: 0.8rem;">ابدأ مشروعك</a>
     </header>
 
     <section id="home" class="hero">
-        <div class="container hero-content animate__animated animate__fadeIn">
-            <h1>ميديا بلس للدعاية والإعلان</h1>
-            <p>نصمم الهوية.. ونطبع التميز.. ونبتكر المستقبل</p>
-            <a href="#services" class="cta-btn">ابدأ رحلة نجاحك</a>
-        </div>
-    </section>
-
-    <section id="services" class="section-padding">
-        <div class="container">
-            <div class="section-title">
-                <h2>خدماتنا الاحترافية</h2>
-                <p>كل ما تحتاجه لنمو علامتك التجارية في مكان واحد</p>
-            </div>
-            
-            <div class="services-grid">
-                <div class="service-card animate__animated animate__fadeInUp">
-                    <i class="fas fa-magic"></i>
-                    <h3>تصميم الجرافيك</h3>
-                    <ul class="service-list">
-                        <li>تصميم الشعارات والهوية البصرية</li>
-                        <li>تصاميم السوشيال ميديا الاحترافية</li>
-                        <li>تصميم العبوات والتغليف (Packaging)</li>
-                        <li>تصميم البروفايل والكتالوجات</li>
-                        <li>فيديوهات الموشن جرافيك</li>
-                    </ul>
-                </div>
-
-                <div class="service-card animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">
-                    <i class="fas fa-print"></i>
-                    <h3>خدمات المطبوعات</h3>
-                    <ul class="service-list">
-                        <li>كروت شخصية وفلاير وبروشور</li>
-                        <li>لافتات خارجية (بنر - فليكس - فينيل)</li>
-                        <li>مستلزمات المعارض (رول أب - بوب أب)</li>
-                        <li>الهدايا الدعائية (أكواب - أقلام - تيشيرتات)</li>
-                        <li>طباعة الديجيتال والأوفست</li>
-                    </ul>
-                </div>
-
-                <div class="service-card animate__animated animate__fadeInUp" style="animation-delay: 0.4s;">
-                    <i class="fas fa-bullhorn"></i>
-                    <h3>الدعاية والإعلان</h3>
-                    <ul class="service-list">
-                        <li>إدارة كاملة لصفحات السوشيال ميديا</li>
-                        <li>حملات إعلانية ممولة (FB - IG - Google)</li>
-                        <li>صناعة المحتوى الإبداعي</li>
-                        <li>استشارات الهوية التسويقية</li>
-                    </ul>
-                </div>
+        <div class="hero-text animate__animated animate__fadeInLeft">
+            <span class="section-tag" style="text-align: right;">الوكالة الإعلانية الأسرع نمواً</span>
+            <h1>نصنع هوية<br><span style="color: var(--secondary)">تتحدث عنك.</span></h1>
+            <p>ميديا بلس ليست مجرد شركة دعاية، نحن مختبر إبداعي يحول الأفكار المعقدة إلى تجارب بصرية مذهلة ومطبوعات فائقة الجودة.</p>
+            <div class="btn-group">
+                <a href="#portfolio" class="btn btn-primary">رؤية أعمالنا</a>
+                <a href="#services" class="btn btn-outline">خدماتنا</a>
             </div>
         </div>
     </section>
 
-    <section id="portfolio" class="section-padding portfolio">
-        <div class="container">
-            <div class="section-title">
-                <h2>سابقة أعمالنا</h2>
-                <p>نماذج من إبداعات ميديا بلس</p>
+    <div class="stats animate__animated animate__fadeInUp">
+        <div class="stat-item"><h2>+500</h2><p>عميل سعيد</p></div>
+        <div class="stat-item"><h2>+1200</h2><p>مشروع منفذ</p></div>
+        <div class="stat-item"><h2>15</h2><p>عام خبرة</p></div>
+        <div class="stat-item"><h2>24/7</h2><p>دعم فني</p></div>
+    </div>
+
+    <section id="services" class="services">
+        <span class="section-tag">ماذا نقدم؟</span>
+        <h2 class="section-title">حلول إبداعية متكاملة</h2>
+        
+        <div class="services-grid">
+            <div class="s-card">
+                <i class="fas fa-fill-drip"></i>
+                <h3>Graphic Design</h3>
+                <ul>
+                    <li>بناء الهوية البصرية (Branding)</li>
+                    <li>تصميم الشعارات الاحترافية</li>
+                    <li>حملات السوشيال ميديا</li>
+                    <li>تصميم الموشن جرافيك</li>
+                </ul>
             </div>
-            <div class="portfolio-grid">
-                <div class="portfolio-item">تصميم شعارات</div>
-                <div class="portfolio-item">مطبوعات ورقية</div>
-                <div class="portfolio-item">واجهات محلات</div>
-                <div class="portfolio-item">هدايا دعائية</div>
+            <div class="s-card">
+                <i class="fas fa-print"></i>
+                <h3>Printing Solutions</h3>
+                <ul>
+                    <li>طباعة أوفست وديجيتال</li>
+                    <li>لوحات إعلانية (Outdoor/Indoor)</li>
+                    <li>تجهيز أجنحة المعارض</li>
+                    <li>الهدايا الدعائية واليونيفورم</li>
+                </ul>
+            </div>
+            <div class="s-card">
+                <i class="fas fa-chart-line"></i>
+                <h3>Digital Marketing</h3>
+                <ul>
+                    <li>إدارة الحملات الإعلانية</li>
+                    <li>تحسين محركات البحث SEO</li>
+                    <li>كتابة المحتوى التسويقي</li>
+                    <li>استراتيجيات النمو</li>
+                </ul>
             </div>
         </div>
     </section>
 
-    <footer id="contact">
-        <div class="container">
-            <h2 style="margin-bottom: 20px;">تواصل معنا الآن</h2>
-            <div class="footer-links">
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="https://wa.me/20123456789"><i class="fab fa-whatsapp"></i></a>
-                <a href="mailto:info@mediaplus.com"><i class="fas fa-envelope"></i></a>
+    <section id="portfolio" class="portfolio">
+        <span class="section-tag">معرض الإبداع</span>
+        <h2 class="section-title">آخر مشاريعنا</h2>
+        <div class="p-grid">
+            <div class="p-item" style="background-image: url('https://via.placeholder.com/400x600/111'); background-size: cover;">
+                <div class="p-overlay">
+                    <h3>هوية بصرية كاملة</h3>
+                    <p>شركة العقارات العالمية</p>
+                </div>
             </div>
-            <div class="copyright">
-                <p>جميع الحقوق محفوظة © 2024 لشركة ميديا بلس للدعاية والإعلان</p>
-                <p style="margin-top: 10px;">
-                    تمت البرمجة والتصميم بواسطة 
-                    <a href="https://marqex1.github.io/marqex1/" target="_blank" class="marqex-btn">ماركيكس | Marqex</a>
-                </p>
+            <div class="p-item" style="background-image: url('https://via.placeholder.com/400x600/222'); background-size: cover;">
+                <div class="p-overlay">
+                    <h3>تجهيز معرض</h3>
+                    <p>مؤتمر التكنولوجيا 2024</p>
+                </div>
             </div>
+            <div class="p-item" style="background-image: url('https://via.placeholder.com/400x600/333'); background-size: cover;">
+                <div class="p-overlay">
+                    <h3>حملة سوشيال ميديا</h3>
+                    <p>مطاعم سيتي جاردن</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3 class="logo">MEDIA PLUS.</h3>
+                <p>نحن هنا لنضع علامتك التجارية في الصدارة. حلولنا تبدأ من التصميم وتنتهي بالطباعة والتركيب.</p>
+            </div>
+            <div class="footer-col">
+                <h4>روابط سريعة</h4>
+                <ul style="list-style: none; line-height: 2;">
+                    <li><a href="#" style="color:#aaa; text-decoration:none;">سياسة الخصوصية</a></li>
+                    <li><a href="#" style="color:#aaa; text-decoration:none;">طلب عرض سعر</a></li>
+                    <li><a href="#" style="color:#aaa; text-decoration:none;">انضم لفريقنا</a></li>
+                </ul>
+            </div>
+            <div class="footer-col" id="contact">
+                <h4>تواصل معنا</h4>
+                <p>مصر، القاهرة، مدينة نصر</p>
+                <p>info@mediaplus.com</p>
+                <p>+20 123 456 7890</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>جميع الحقوق محفوظة © 2025 لشركة ميديا بلس للدعاية والإعلان</p>
+            <p style="margin-top: 15px;">
+                Coded & Designed by 
+                <a href="https://marqex1.github.io/marqex1/" target="_blank" class="marqex-link">MARQEX</a>
+            </p>
         </div>
     </footer>
 
